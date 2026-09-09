@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "X Hunter",
+  "version": "1.0.0",
+  "description": "Find promising X posts from the currently visible search results.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://x.com/*", "https://twitter.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
